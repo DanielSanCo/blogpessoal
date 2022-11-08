@@ -1,6 +1,6 @@
 import { Body, Controller, UseGuards, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put } from "@nestjs/common";
 import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
-import { JwtAuthGuard } from "src/auth/guard/jwt-auth.guard";
+import { JwtAuthGuard } from "../../auth/guard/jwt-auth.guard";
 import { Usuario } from "../entities/usuario.entity";
 import { UsuarioService } from "../services/usuario.service";
 
