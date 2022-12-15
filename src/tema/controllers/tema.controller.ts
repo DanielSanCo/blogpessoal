@@ -24,16 +24,16 @@ export class TemaController {
   }
 
   @Get('/serie/:serie')
-    @HttpCode(HttpStatus.OK)
-    findBySerie(@Param('serie') serie: string): Promise<Tema[]> {
-        return this.temaService.findBySerie(serie)
-    }
+  @HttpCode(HttpStatus.OK)
+  findBySerie(@Param('serie') serie: string): Promise<Tema[]> {
+    return this.temaService.findBySerie(serie)
+  }
 
   @Get('/educacao/:educacao')
-    @HttpCode(HttpStatus.OK)
-    findByEducacao(@Param('educacao') educacao: string): Promise<Tema[]> {
-        return this.temaService.findByEducacao(educacao)
-    }
+  @HttpCode(HttpStatus.OK)
+  findByEducacao(@Param('educacao') educacao: string): Promise<Tema[]> {
+    return this.temaService.findByEducacao(educacao)
+  }
 
   @Post()
   @HttpCode(HttpStatus.CREATED)
@@ -49,7 +49,7 @@ export class TemaController {
 
   @Delete('/:id')
   @HttpCode(HttpStatus.NO_CONTENT)
-  delete(@Param('id', ParseIntPipe) id: number){
+  delete(@Param('id', ParseIntPipe) id: number) {
     return this.temaService.delete(id);
   }
 

@@ -11,7 +11,7 @@ export class UsuarioController {
   constructor(private readonly usuarioService: UsuarioService) { }
 
   @UseGuards(JwtAuthGuard)
-  @Get()
+  @Get('/all')
   @HttpCode(HttpStatus.OK)
   findAll(): Promise<Usuario[]> {
     return this.usuarioService.findAll();
@@ -41,14 +41,14 @@ export class UsuarioController {
         return this.usuarioService.findByNickname(nickname)
     }
 
-  @Post('/cadastrar')
   @HttpCode(HttpStatus.CREATED)
+  @Post('/cadastrar')
   create(@Body() usuario: Usuario): Promise<Usuario> {
     return this.usuarioService.create(usuario);
   }
 
   @UseGuards(JwtAuthGuard)
-  @Put()
+  @Put('/atualizar')
   @HttpCode(HttpStatus.OK)
   update(@Body() Usuario: Usuario): Promise<Usuario> {
     return this.usuarioService.update(Usuario);
