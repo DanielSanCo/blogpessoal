@@ -24,22 +24,22 @@ export class UsuarioController {
   }
 
   @Get('/name/:name')
-    @HttpCode(HttpStatus.OK)
-    findByName(@Param('name') name: string): Promise<Usuario[]> {
-        return this.usuarioService.findByName(name)
-    }
+  @HttpCode(HttpStatus.OK)
+  findByName(@Param('name') name: string): Promise<Usuario[]> {
+    return this.usuarioService.findByName(name)
+  }
 
-    @Get('/email/:usuario')
-    @HttpCode(HttpStatus.OK)
-    findByUsuario(@Param('usuario') usuario: string): Promise<Usuario> {
-        return this.usuarioService.findByUsuario(usuario)
-    }
+  @Get('/email/:usuario')
+  @HttpCode(HttpStatus.OK)
+  findByUsuario(@Param('usuario') usuario: string): Promise<Usuario> {
+    return this.usuarioService.findByUsuario(usuario)
+  }
 
   @Get('/nickname/:nickname')
-    @HttpCode(HttpStatus.OK)
-    findByNickname(@Param('nickname') nickname: string): Promise<Usuario[]> {
-        return this.usuarioService.findByNickname(nickname)
-    }
+  @HttpCode(HttpStatus.OK)
+  findByNickname(@Param('nickname') nickname: string): Promise<Usuario[]> {
+    return this.usuarioService.findByNickname(nickname)
+  }
 
   @HttpCode(HttpStatus.CREATED)
   @Post('/cadastrar')
